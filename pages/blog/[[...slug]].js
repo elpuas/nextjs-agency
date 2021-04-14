@@ -46,6 +46,7 @@ export default function BlogPost({post, archive, posts, pagination}) {
             <div className="grid lg:grid-cols-2 gap-12">
               {posts.map((post, index) => (
                 <Card
+                  image={post?.featuredImage.node}
                   key={index}
                   title={post?.title}
                   url={post?.uri}

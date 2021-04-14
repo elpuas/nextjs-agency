@@ -15,6 +15,7 @@ import styles from './Hero.module.css'
  * @param {object} props.ctaUrl          The cta url.
  * @param {string} props.subtitle        Text for the subtitle.
  * @param {string} props.title           Text for the title.
+ * @param {node} props.children          InnerBlocks node.
  * @return {Element}                     The Hero component.
  */
 export default function Hero({
@@ -24,7 +25,8 @@ export default function Hero({
   ctaText,
   ctaUrl,
   subtitle,
-  title
+  title,
+  children
 }) {
   return (
     <section
@@ -51,6 +53,7 @@ export default function Hero({
           />
         )}
       </div>
+      {children}
     </section>
   )
 }
@@ -62,5 +65,6 @@ Hero.propTypes = {
   ctaText: PropTypes.string,
   ctaUrl: PropTypes.string,
   subtitle: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  children: PropTypes.node
 }

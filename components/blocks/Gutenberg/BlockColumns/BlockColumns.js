@@ -19,7 +19,7 @@ export default function BlockColumns({options, innerBlocks}) {
       {!!innerBlocks?.length && (
         <Columns
           id={options?.anchor}
-          className={options?.className}
+          className={options?.className ? options?.className : 'columns'}
           columnCount={innerBlocks?.length}
         >
           {innerBlocks.map((block, index) => {

@@ -21,7 +21,7 @@
     @apply flex flex-col items-center;
 
     @screen lg {
-      @apply flex-row items-end justify-between;
+      @apply flex-row justify-between;
     }
 
     & .logo {

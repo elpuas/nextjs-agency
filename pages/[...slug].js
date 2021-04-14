@@ -2,6 +2,7 @@ import Container from '@/components/atoms/Container'
 import RichText from '@/components/atoms/RichText'
 import Layout from '@/components/common/Layout'
 import Blocks from '@/components/molecules/Blocks'
+import Hero from '@/components/organisms/Hero'
 import getPagePropTypes from '@/functions/getPagePropTypes'
 import getPostTypeStaticPaths from '@/lib/wordpress/_global/getPostTypeStaticPaths'
 import getPostTypeStaticProps from '@/lib/wordpress/_global/getPostTypeStaticProps'
@@ -21,8 +22,26 @@ export default function Page({post}) {
   return (
     <Layout seo={{...post?.seo}}>
       <Container>
-        <article className="innerWrap">
-          <RichText tag="h1">{post?.title}</RichText>
+        {'/' === post?.slug ? (
+          <Hero
+            subtitle="4x more bloodier guts"
+            className="homepage-hero"
+            title="2x More Gore"
+            body="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis."
+            backgroundImage={{
+              url: post?.featuredImage.node.sourceUrl
+            }}
+            cta={{icon: 'arrowRight', text: 'Take a look'}}
+          />
+        ) : null}
+        <article
+          className={`innerWrap ${post?.title
+            .toLowerCase()
+            .replace(/\s/g, '')}`}
+        >
+          {'/' === post?.slug ? null : (
+            <RichText tag="h1">{post?.title}</RichText>
+          )}
           <Blocks blocks={post?.blocks} />
         </article>
       </Container>
