@@ -1,0 +1,13 @@
+.blockZombieMovies {
+  @apply grid gap-16;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  @screen md {
+    @apply grid-cols-12;
+  }
+
+  & > div {
+    @apply col-span-1 md:col-span-4;
+  }
+}

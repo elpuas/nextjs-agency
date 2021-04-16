@@ -68,6 +68,10 @@ const AcfBlockMediaText = dynamic(() =>
   import('@/components/blocks/ACF/AcfBlockMediaText')
 )
 
+const BlockZombieMovies = dynamic(() =>
+  import('@/components/blocks/CustomBlocks/BlockZombieMovies')
+)
+
 /**
  * Decide which block component to display.
  *
@@ -124,6 +128,8 @@ export default function displayBlock(block, index) {
       return <LzbBlockHero attributes={attributes} key={index} />
     case 'acf/acf-media-text':
       return <AcfBlockMediaText attributes={attributes} key={index} />
+    case 'wdsblocks/zombie-movies':
+      return <BlockZombieMovies attributes={attributes} key={index} />
     default:
       return <pre key={index}>{JSON.stringify(block, null, 2)}</pre>
   }

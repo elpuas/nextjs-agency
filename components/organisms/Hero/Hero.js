@@ -11,6 +11,7 @@ import styles from './Hero.module.css'
  * @param {string} props.backgroundImage The background image object.
  * @param {string} props.body            Text for the body.
  * @param {string} props.className       The className.
+ * @param {any}    props.children        InnerBlocks.
  * @param {object} props.ctaText         The cta text.
  * @param {object} props.ctaUrl          The cta url.
  * @param {string} props.subtitle        Text for the subtitle.
@@ -22,11 +23,11 @@ export default function Hero({
   backgroundImage,
   body,
   className,
+  children,
   ctaText,
   ctaUrl,
   subtitle,
-  title,
-  children
+  title
 }) {
   return (
     <section
@@ -62,6 +63,7 @@ Hero.propTypes = {
   backgroundImage: PropTypes.object,
   body: PropTypes.string,
   className: PropTypes.string,
+  children: PropTypes.any,
   ctaText: PropTypes.string,
   ctaUrl: PropTypes.string,
   subtitle: PropTypes.string,
