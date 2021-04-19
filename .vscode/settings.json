@@ -19,5 +19,8 @@
     "titleBar.inactiveForeground": "#3f4040CC",
     "titleBar.activeBackground": "#F3713C",
     "titleBar.inactiveBackground": "#F3713CCC"
-  }
+  },
+  "cSpell.words": [
+    "wdsblocks"
+  ]
 }

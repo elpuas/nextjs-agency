@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import PropTypes from 'prop-types'
 import styles from './BlockZombieMovies.module.css'
 /**
@@ -11,27 +10,40 @@ import styles from './BlockZombieMovies.module.css'
  */
 export default function BlockZombieMovies({attributes}) {
   const results = attributes.zombieData.results
+  console.log({results})
   return (
     <>
-      <div className={cn(styles.blockZombieMovies)}>
+      <div className={styles.blockZombieMovies}>
         {results
           ? results.map((movie) => {
               return (
-                <div id={movie?.id} key={movie?.id}>
+                <div
+                  id={movie?.id}
+                  key={movie?.id}
+                  className={styles.movieCard}
+                >
                   <figure>
                     {null !== movie.backdrop_path ? (
                       <img
                         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                         alt={movie.title}
                         width={500}
-                        height={160}
-                        className="poster"
+                        height={300}
+                        className={styles.poster}
                       />
-                    ) : null}
+                    ) : (
+                      <img
+                        src="http://placekitten.com/1024/300"
+                        alt="kittens"
+                        width="500"
+                        height="300"
+                        className={styles.kitten}
+                      />
+                    )}
                   </figure>
                   <h2>{movie?.title}</h2>
                   <p>{`Year: ${movie?.release_date.substring(0, 4)}`}</p>
-                  <p>{movie?.overview}</p>
+                  <p>{movie?.overview.split(' ').splice(0, 50).join(' ')}</p>
                 </div>
               )
             })

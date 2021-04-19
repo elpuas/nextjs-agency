@@ -1,15 +1,24 @@
 .header {
-  @apply sticky top-0 py-4 transition-all z-50 border-b shadow bg-gray-100;
+  @apply sticky top-0 py-4 transition-all;
+
+  z-index: 100;
+  background-size: 100% 100%;
 
   & .search {
-    @apply mb-8;
+    @apply mb-8 w-full max-w-5xl mx-auto h-0 overflow-y-hidden;
+
+    transition: all 0.3s ease-out;
 
     @screen lg {
       @apply mb-4;
     }
 
+    & > div {
+      @apply w-full;
+    }
+
     & .input {
-      @apply mx-auto;
+      @apply mx-auto w-full;
 
       @screen lg {
         @apply mx-0 ml-auto;
@@ -17,15 +26,23 @@
     }
   }
 
+  & .isVisible {
+    @apply visible h-9;
+  }
+
   & .navigation {
     @apply flex flex-col items-center;
+
+    & a {
+      font-family: 'Architects Daughter', cursive;
+    }
 
     @screen lg {
       @apply flex-row justify-between;
     }
 
     & .logo {
-      @apply mb-8 w-32 h-auto;
+      @apply mb-8 w-24 h-auto;
 
       @screen lg {
         @apply mb-0;

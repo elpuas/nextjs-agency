@@ -9,5 +9,50 @@
 
   & > div {
     @apply col-span-1 md:col-span-4;
+
+    &:nth-child(4),
+    &:nth-child(11) {
+      @apply md:col-span-full relative z-50 flex flex-col p-20 md:p-40;
+
+      & figure {
+        @apply absolute top-0 left-0 w-full;
+
+        z-index: -1;
+
+        & img {
+          @apply w-full object-cover;
+
+          z-index: -1;
+        }
+      }
+
+      & h2 {
+        @apply z-50 mt-0;
+      }
+
+      & p {
+        @apply z-50 text-white;
+
+        text-shadow: 0 0 4px black;
+      }
+    }
+
+    & h2 {
+      @apply text-center text-red-700 -mt-7;
+
+      font-family: 'Creepster', cursive;
+      font-size: 2.5rem !important;
+      line-height: 35px !important;
+      text-shadow: -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white,
+        0 4px 4px black;
+    }
+  }
+
+  & figure {
+    & img {
+      @apply w-full object-cover;
+
+      min-height: 200px;
+    }
   }
 }

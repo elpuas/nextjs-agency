@@ -15,6 +15,10 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#fff" />
       <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+        rel="stylesheet"
+      />
+      <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/favicon/apple-icon.png"
