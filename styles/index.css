@@ -34,7 +34,11 @@ h3 {
   @apply text-red-700;
 
   font-family: 'Creepster', cursive;
-  text-shadow: -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white,
+  text-shadow:
+    -4px 0 white,
+    0 4px white,
+    4px 0 white,
+    0 -4px white,
     0 4px 4px black;
 }
 

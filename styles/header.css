@@ -29,17 +29,4 @@
       margin-left: -10px;
     }
   }
-
-  /* &.header-hide {
-    max-width: 320px;
-
-    & > div:first-child {
-      @apply hidden;
-    }
-
-    & nav,
-    & button {
-      @apply hidden;
-    }
-  } */
 }
