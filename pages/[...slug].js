@@ -6,6 +6,7 @@ import Hero from '@/components/organisms/Hero'
 import getPagePropTypes from '@/functions/getPagePropTypes'
 import getPostTypeStaticPaths from '@/lib/wordpress/_global/getPostTypeStaticPaths'
 import getPostTypeStaticProps from '@/lib/wordpress/_global/getPostTypeStaticProps'
+import {useTheme} from 'next-themes'
 
 // Define route post type.
 const postType = 'page'
@@ -19,6 +20,7 @@ const postType = 'page'
  * @return {Element}          The Page component.
  */
 export default function Page({post}) {
+  const {theme, setTheme} = useTheme()
   return (
     <Layout seo={{...post?.seo}}>
       <div
@@ -26,6 +28,14 @@ export default function Page({post}) {
           .toLowerCase()
           .replace(/\s/g, '')}`}
       >
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className="p-3 h-12 w-12 order-2 md:order-3"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          Dark Mode
+        </button>
         <Container>
           {'/' === post?.slug ? (
             <Hero

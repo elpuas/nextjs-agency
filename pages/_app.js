@@ -5,6 +5,7 @@ import {ApolloProvider} from '@apollo/client'
 import {useApollo} from 'lib/apolloConfig'
 import {Provider} from 'next-auth/client'
 import {DefaultSeo} from 'next-seo'
+import {ThemeProvider} from 'next-themes'
 import Error from 'next/error'
 import {useRouter} from 'next/router'
 import PropTypes from 'prop-types'
@@ -93,7 +94,9 @@ export default function App({Component, pageProps}) {
                   mode.
                 </p>
               )}
-              <Component {...componentProps} />
+              <ThemeProvider attribute="class">
+                <Component {...componentProps} />
+              </ThemeProvider>
             </>
           )}
         </WordPressProvider>

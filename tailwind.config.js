@@ -6,7 +6,7 @@ module.exports = {
       './pages/**/*.{js,ts,jsx,tsx}'
     ]
   },
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     extend: {
       container: {
@@ -19,6 +19,9 @@ module.exports = {
           lg: '1024px',
           xl: '1280px'
         }
+      },
+      colors: {
+        'zombie-dark': '#283430'
       }
     }
   },
