@@ -21,30 +21,32 @@ const postType = 'page'
 export default function Page({post}) {
   return (
     <Layout seo={{...post?.seo}}>
-      <Container>
-        {'/' === post?.slug ? (
-          <Hero
-            subtitle="4x more bloodier guts"
-            className="homepage-hero"
-            title="2x More Gore"
-            body="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis."
-            backgroundImage={{
-              url: post?.featuredImage.node.sourceUrl
-            }}
-            cta={{icon: 'arrowRight', text: 'Take a look'}}
-          />
-        ) : null}
-        <article
-          className={`innerWrap ${post?.title
-            .toLowerCase()
-            .replace(/\s/g, '')}`}
-        >
-          {'/' === post?.slug ? null : (
-            <RichText tag="h1">{post?.title}</RichText>
-          )}
-          <Blocks blocks={post?.blocks} />
-        </article>
-      </Container>
+      <div
+        className={`template-${postType} ${post?.title
+          .toLowerCase()
+          .replace(/\s/g, '')}`}
+      >
+        <Container>
+          {'/' === post?.slug ? (
+            <Hero
+              subtitle="4x more bloodier guts"
+              className="homepage-hero"
+              title="2x More Gore"
+              body="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis."
+              backgroundImage={{
+                url: post?.featuredImage.node.sourceUrl
+              }}
+              cta={{icon: 'arrowRight', text: 'Take a look'}}
+            />
+          ) : null}
+          <article className={`innerWrap`}>
+            {'/' === post?.slug ? null : (
+              <RichText tag="h1">{post?.title}</RichText>
+            )}
+            <Blocks blocks={post?.blocks} />
+          </article>
+        </Container>
+      </div>
     </Layout>
   )
 }

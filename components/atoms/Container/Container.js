@@ -1,7 +1,7 @@
+import cn from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './Container.module.css'
-import cn from 'classnames'
 
 /**
  * Render the Container component.

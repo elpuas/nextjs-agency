@@ -2,9 +2,45 @@
   /* Write your own custom base styles here if necessary - https://tailwindcss.com/docs/adding-base-styles#using-css */
 
   body {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden  text-white;
+
+    background-color: #283430;
+    background-image: url('/images/body-background.png');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 75%;
   }
+
+  @font-face {
+    font-family: 'Butcher';
+    src: url('/fonts/butcher.woff'), url('/fonts/butcher.woff2');
+    font-style: normal;
+  }
+}
+
+a,
+input,
+button {
+  @apply focus:outline-black focus-within:outline-black;
+
+  &:focus-visible {
+    @apply outline-black;
+  }
+}
+
+h1,
+h2,
+h3 {
+  @apply text-red-700;
+
+  font-family: 'Creepster', cursive;
+  text-shadow: -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white,
+    0 4px 4px black;
 }
 
 /* Write you own custom classes here if necessary */
 @import 'homepage.css';
+@import 'page.css';
+@import 'archive.css';
+@import 'header.css';
+@import 'towatch.css';

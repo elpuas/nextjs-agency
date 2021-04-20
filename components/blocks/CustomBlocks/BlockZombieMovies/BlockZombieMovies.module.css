@@ -8,11 +8,11 @@
   }
 
   & > div {
-    @apply col-span-1 md:col-span-4;
+    @apply col-span-1 md:col-span-4 p-5;
 
     &:nth-child(4),
     &:nth-child(11) {
-      @apply md:col-span-full relative z-50 flex flex-col p-20 md:p-40;
+      @apply md:col-span-full relative z-50 flex flex-col p-20 md:p-40  overflow-hidden;
 
       & figure {
         @apply absolute top-0 left-0 w-full;
@@ -22,12 +22,9 @@
         & img {
           @apply w-full object-cover;
 
+          border-radius: 50px;
           z-index: -1;
         }
-      }
-
-      & h2 {
-        @apply z-50 mt-0;
       }
 
       & p {
@@ -36,20 +33,13 @@
         text-shadow: 0 0 4px black;
       }
     }
+  }
 
-    & h2 {
-      @apply text-center text-red-700 -mt-7;
+  & .zombieTitle {
+    @apply z-50 -mt-7 text-center;
 
-      font-family: 'Creepster', cursive;
-      font-size: 2.5rem !important;
-      line-height: 35px !important;
-      text-shadow:
-        -4px 0 white,
-        0 4px white,
-        4px 0 white,
-        0 -4px white,
-        0 4px 4px black;
-    }
+    font-size: 2.5rem !important;
+    line-height: 35px !important;
   }
 
   & figure {

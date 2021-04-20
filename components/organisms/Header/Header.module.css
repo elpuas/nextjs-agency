@@ -2,7 +2,6 @@
   @apply sticky top-0 py-4 transition-all;
 
   z-index: 100;
-  background-size: 100% 100%;
 
   & .search {
     @apply mb-8 w-full max-w-5xl mx-auto h-0 overflow-y-hidden;
@@ -33,8 +32,24 @@
   & .navigation {
     @apply flex flex-col items-center;
 
+    & li:nth-child(odd) {
+      & a {
+        &:hover,
+        &:focus {
+          transform: rotate(-6deg);
+        }
+      }
+    }
+
     & a {
-      font-family: 'Architects Daughter', cursive;
+      @apply text-2xl text-red-700;
+
+      font-family: 'Creepster', cursive;
+
+      &:hover,
+      &:focus {
+        transform: rotate(6deg);
+      }
     }
 
     @screen lg {
@@ -42,7 +57,7 @@
     }
 
     & .logo {
-      @apply mb-8 w-24 h-auto;
+      @apply mb-8 w-72 h-auto;
 
       @screen lg {
         @apply mb-0;

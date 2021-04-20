@@ -1,0 +1,45 @@
+.templateHeader {
+  @apply mx-auto my-4;
+
+  border-radius: 50px;
+  background: linear-gradient(315deg, rgb(43 56 51 / 71%), #242f2b);
+  box-shadow: -9px -9px 18px #151c19, 9px 9px 18px #3b4c47;
+  max-width: 1216px;
+
+  & .search-button {
+    position: absolute;
+    left: -10px;
+    background: green;
+    border-radius: 100%;
+    padding: 10px;
+    top: 15px;
+    transform: rotate(349deg);
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      z-index: 1;
+      border-style: solid;
+      border-width: 0 20px 23px 0;
+      border-color: transparent green transparent transparent;
+      bottom: -18px;
+      left: 50%;
+      margin-left: -10px;
+    }
+  }
+
+  /* &.header-hide {
+    max-width: 320px;
+
+    & > div:first-child {
+      @apply hidden;
+    }
+
+    & nav,
+    & button {
+      @apply hidden;
+    }
+  } */
+}

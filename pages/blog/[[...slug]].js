@@ -39,29 +39,32 @@ export default function BlogPost({post, archive, posts, pagination}) {
   if (archive) {
     return (
       <Layout seo={{...post?.seo}}>
-        <Container>
-          {!posts || !posts.length ? (
-            <p>No posts found.</p>
-          ) : (
-            <div className="grid lg:grid-cols-2 gap-12">
-              {posts.map((post, index) => (
-                <Card
-                  image={post?.featuredImage.node}
-                  key={index}
-                  title={post?.title}
-                  url={post?.uri}
-                  body={post?.excerpt}
-                />
-              ))}
-            </div>
-          )}
-          <Button
-            onClick={loadPosts}
-            text="Load More"
-            type="secondary"
-            disabled={!pagination.hasNextPage}
-          />
-        </Container>
+        <div className={`template-archive`}>
+          <Container>
+            <h1>Memories from a Rotten Braiiin</h1>
+            {!posts || !posts.length ? (
+              <p>No posts found.</p>
+            ) : (
+              <div className="posts">
+                {posts.map((post, index) => (
+                  <Card
+                    image={post?.featuredImage.node}
+                    key={index}
+                    title={post?.title}
+                    url={post?.uri}
+                    body={post?.excerpt}
+                  />
+                ))}
+              </div>
+            )}
+            <Button
+              onClick={loadPosts}
+              text="Load More"
+              type="secondary"
+              disabled={!pagination.hasNextPage}
+            />
+          </Container>
+        </div>
       </Layout>
     )
   }

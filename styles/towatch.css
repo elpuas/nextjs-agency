@@ -1,0 +1,30 @@
+#page-content {
+  & .template-page {
+    &.towatch {
+      & .zombie-block {
+        & > div {
+          border-radius: 50px;
+          background: linear-gradient(315deg, #2b3833, #242f2b);
+          box-shadow: -9px -9px 18px #151c19, 9px 9px 18px #3b4c47;
+
+          &:nth-child(4),
+          &:nth-child(11) {
+            & img {
+              @apply p-0;
+
+              border-radius: 50px;
+            }
+          }
+
+          & img {
+            @apply p-2;
+
+            border-radius: 5px;
+            background: linear-gradient(315deg, #2b38335e, #242f2b);
+            box-shadow: -9px -9px 18px #151c19, 9px 9px 18px #3b4c47;
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ export default function BlockZombieMovies({attributes}) {
   console.log({results})
   return (
     <>
-      <div className={styles.blockZombieMovies}>
+      <div className={`${styles.blockZombieMovies} zombie-block`}>
         {results
           ? results.map((movie) => {
               return (
@@ -41,7 +41,7 @@ export default function BlockZombieMovies({attributes}) {
                       />
                     )}
                   </figure>
-                  <h2>{movie?.title}</h2>
+                  <h2 className={styles.zombieTitle}>{movie?.title}</h2>
                   <p>{`Year: ${movie?.release_date.substring(0, 4)}`}</p>
                   <p>{movie?.overview.split(' ').splice(0, 50).join(' ')}</p>
                 </div>

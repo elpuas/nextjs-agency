@@ -1,14 +1,41 @@
 #page-content {
   & .homepage {
-    & .columns {
-      & img {
-        @apply w-full object-cover;
+    @apply pt-12;
 
+    & .innerWrap {
+      & > p {
+        @apply mb-12 md:mb-24;
+      }
+
+      & h2 {
+        @apply mb-12 md:mb-24;
+      }
+    }
+
+    & .columns {
+      & > div {
+        @apply p-8;
+
+        border-radius: 50px;
+        background: linear-gradient(315deg, #2b38335e, #242f2b);
+        box-shadow: -9px -9px 18px #151c19, 9px 9px 18px #3b4c47;
+      }
+
+      & p {
+        @apply mb-0;
+      }
+
+      & img {
+        @apply w-full object-cover p-2;
+
+        border-radius: 5px;
+        background: linear-gradient(315deg, #2b38335e, #242f2b);
+        box-shadow: -9px -9px 18px #151c19, 9px 9px 18px #3b4c47;
         height: 160px;
       }
 
       & h3 {
-        @apply text-center text-red-900;
+        @apply text-center text-red-900 text-3xl;
 
         font-family: 'Creepster', cursive;
       }
@@ -22,10 +49,10 @@
   }
 
   & .homepage-hero {
-    margin-left: calc(-100vw / 2 + 100% / 2);
-    margin-right: calc(-100vw / 2 + 100% / 2);
-    max-width: 100vw;
-    width: 100vw;
+    border-radius: 50px;
+
+    box-shadow: inset -1px 3px 8px 5px rgba(0, 0, 0, 0.5),
+      2px 5px 16px 0px black, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
     & > div {
       @apply max-w-5xl mx-auto;

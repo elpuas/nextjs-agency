@@ -5,7 +5,7 @@ import Navigation from '@/components/molecules/Navigation'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import {useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import styles from './Header.module.css'
 
 // TODO: Create Storybook for this component.
@@ -17,6 +17,29 @@ import styles from './Header.module.css'
  * @return {Element} The Header component.
  */
 export default function Header() {
+  const prevScrollY = useRef(0)
+
+  const [goingUp, setGoingUp] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (prevScrollY.current < currentScrollY && goingUp) {
+        setGoingUp(false)
+      }
+      if (prevScrollY.current > currentScrollY && !goingUp) {
+        setGoingUp(true)
+      }
+
+      prevScrollY.current = currentScrollY
+      console.log(goingUp, currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, {passive: true})
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [goingUp])
+
   const {menus} = useWordPressContext()
 
   const [searchClass, setSearchClass] = useState(false)
@@ -31,8 +54,11 @@ export default function Header() {
         Skip to Main Content
       </a>
       <header
-        className={styles.header}
-        style={{backgroundImage: 'url(/images/bloody-header.png)'}}
+        className={cn(
+          styles.header,
+          'templateHeader',
+          !goingUp ? 'header-hide' : null
+        )}
       >
         <div
           className={cn(styles.search, searchClass ? styles.isVisible : null)}
@@ -60,7 +86,9 @@ export default function Header() {
               styles={styles}
               className={styles.primaryMenu}
             />
-            <button onClick={onSearchClick}>Braiiins</button>
+            <button className="search-button" onClick={onSearchClick}>
+              <span> 🧠 </span>Braiiins
+            </button>
           </div>
         </Container>
       </header>

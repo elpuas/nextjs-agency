@@ -1,0 +1,13 @@
+#page-content {
+  & .template-page:not(.homepage) {
+    @apply py-12;
+
+    & img {
+      @apply w-full object-cover;
+    }
+
+    & h1 {
+      @apply text-8xl mb-24 text-center;
+    }
+  }
+}
