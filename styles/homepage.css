@@ -22,6 +22,7 @@
 
     & .columns {
       @apply mt-48;
+
       & p {
         @apply mb-0 text-center text-purple-400;
       }
