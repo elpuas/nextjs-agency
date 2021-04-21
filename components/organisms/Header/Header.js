@@ -57,7 +57,7 @@ export default function Header() {
         className={cn(
           styles.header,
           'templateHeader',
-          !goingUp ? 'header-hide' : null
+          !goingUp ? styles.headerSticky : null
         )}
       >
         <div
@@ -72,12 +72,20 @@ export default function Header() {
         <Container paddingTop={false} paddingBtm={false}>
           <div className={styles.navigation}>
             <Link href="/">
-              <a className={styles.logo}>
+              <a className={cn(styles.logo, 'logoWrapper')}>
                 <Image
-                  src="/images/logo.png"
-                  alt="Zombie Logo"
-                  width={300}
-                  height={160}
+                  src="/images/logo-light.png"
+                  alt="ZombieLabs Logo"
+                  width={154}
+                  height={34}
+                  className="logo-light"
+                />
+                <Image
+                  src="/images/logo-black.png"
+                  alt="ZombieLabs Logo"
+                  width={154}
+                  height={34}
+                  className="logo-dark"
                 />
               </a>
             </Link>

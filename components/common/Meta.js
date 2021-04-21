@@ -14,7 +14,11 @@ export default function Meta() {
       <meta name="msapplication-TileColor" content="#fffff" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#fff" />
-      <link rel="preload" href="/fonts/butcher.woff" as="font" crossOrigin="" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

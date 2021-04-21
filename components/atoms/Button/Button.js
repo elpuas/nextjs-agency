@@ -73,7 +73,8 @@ export default function Button({
     fluid && styles.fluid,
     disabled && styles.disabled,
     styles[size],
-    styles[type]
+    styles[type],
+    'button'
   )
 
   if (url) {

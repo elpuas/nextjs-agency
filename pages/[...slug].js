@@ -2,7 +2,6 @@ import Container from '@/components/atoms/Container'
 import RichText from '@/components/atoms/RichText'
 import Layout from '@/components/common/Layout'
 import Blocks from '@/components/molecules/Blocks'
-import Hero from '@/components/organisms/Hero'
 import getPagePropTypes from '@/functions/getPagePropTypes'
 import getPostTypeStaticPaths from '@/lib/wordpress/_global/getPostTypeStaticPaths'
 import getPostTypeStaticProps from '@/lib/wordpress/_global/getPostTypeStaticProps'
@@ -31,13 +30,17 @@ export default function Page({post}) {
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="p-3 h-12 w-12 order-2 md:order-3"
+          className="button-dark-mode"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
-          Dark Mode
+          {theme === 'dark' ? (
+            <img src="/images/001-sun.svg" />
+          ) : (
+            <img src="/images/002-moon.svg" />
+          )}
         </button>
         <Container>
-          {'/' === post?.slug ? (
+          {/* {'/' === post?.slug ? (
             <Hero
               subtitle="4x more bloodier guts"
               className="homepage-hero"
@@ -48,7 +51,7 @@ export default function Page({post}) {
               }}
               cta={{icon: 'arrowRight', text: 'Take a look'}}
             />
-          ) : null}
+          ) : null} */}
           <article className={`innerWrap`}>
             {'/' === post?.slug ? null : (
               <RichText tag="h1">{post?.title}</RichText>

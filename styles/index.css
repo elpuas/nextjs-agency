@@ -2,13 +2,41 @@
   /* Write your own custom base styles here if necessary - https://tailwindcss.com/docs/adding-base-styles#using-css */
 
   body {
-    @apply overflow-x-hidden  text-white;
+    @apply overflow-x-hidden text-black dark:text-white bg-yellow-50 dark:bg-zombie-dark;
 
-    background-color: #283430;
-    background-image: url('/images/body-background.png');
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: 75%;
+    background-image: url('/images/pattern.png');
+
+    & .logoWrapper {
+      & > div:first-child {
+        @apply hidden;
+
+        display: none !important;
+      }
+
+      & > div:last-child {
+        @apply block;
+
+        display: block !important;
+      }
+    }
+  }
+
+  .dark {
+    & body {
+      & .logoWrapper {
+        & > div:last-child {
+          @apply hidden;
+
+          display: none !important;
+        }
+
+        & > div:first-child {
+          @apply block;
+
+          display: block !important;
+        }
+      }
+    }
   }
 
   @font-face {
@@ -31,15 +59,14 @@ button {
 h1,
 h2,
 h3 {
-  @apply text-red-700;
+  @apply text-black dark:text-white font-bold;
 
-  font-family: 'Creepster', cursive;
-  text-shadow:
-    -4px 0 white,
-    0 4px white,
-    4px 0 white,
-    0 -4px white,
-    0 4px 4px black;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -3px;
+}
+
+.button-dark-mode {
+  width: 50px;
 }
 
 /* Write you own custom classes here if necessary */

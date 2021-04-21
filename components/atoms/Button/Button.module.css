@@ -1,5 +1,5 @@
 .button {
-  @apply inline-flex items-center justify-center rounded border cursor-pointer font-semibold mr-2 mb-2;
+  @apply inline-flex items-center justify-center cursor-pointer font-semibold mr-2 mb-2 rounded-full py-6 px-8 border-0 mx-auto bg-white text-green-400 dark:bg-green-400 dark:text-white;
 
   & svg {
     @apply ml-4;
@@ -20,7 +20,7 @@
   }
 
   /* SIZES */
-  &.lg {
+  /* &.lg {
     @apply px-4 py-3 text-lg;
   }
 
@@ -34,12 +34,10 @@
 
   &.fluid {
     @apply block w-full text-center;
-  }
+  } */
 
   /* TYPES */
   &.primary {
-    @apply bg-white;
-
     &.disabled {
       @apply opacity-50;
     }

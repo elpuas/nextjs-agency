@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       colors: {
-        'zombie-dark': '#283430'
+        'zombie-dark': '#482EC3'
       }
     }
   },

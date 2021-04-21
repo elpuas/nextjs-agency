@@ -1,11 +1,6 @@
 .templateHeader {
   @apply mx-auto my-4;
 
-  border-radius: 50px;
-  background: linear-gradient(315deg, rgb(43 56 51 / 71%), #242f2b);
-  box-shadow: -9px -9px 18px #151c19, 9px 9px 18px #3b4c47;
-  max-width: 1216px;
-
   & .search-button {
     position: absolute;
     left: -10px;
