@@ -19,14 +19,19 @@ import styles from './Header.module.css'
  */
 export default function Header() {
   const {theme, setTheme} = useTheme()
-
+  const [isMounted, setIsMounted] = useState(false)
   const prevScrollY = useRef(0)
-
   const [goingUp, setGoingUp] = useState(true)
+  const {menus} = useWordPressContext()
+  const [searchClass, setSearchClass] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
     /**
-     *
+     * Function to Handle the Scroll
      */
     function handleScroll() {
       const currentScrollY = window.scrollY
@@ -45,15 +50,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [goingUp])
 
-  const {menus} = useWordPressContext()
-
-  const [searchClass, setSearchClass] = useState(false)
-
   /**
-   *
+   * Function to Change class when click
    */
   function onSearchClick() {
     setSearchClass(!searchClass)
+  }
+
+  function switchTheme() {
+    if (isMounted) {
+      setTheme(theme === 'dark' ? 'light' : 'dark')
+    }
   }
 
   return (
@@ -115,7 +122,7 @@ export default function Header() {
           aria-label="Toggle Dark Mode"
           type="button"
           className="button-dark-mode"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={switchTheme}
         >
           <img
             src={theme === 'dark' ? '/images/sun.svg' : '/images/moon.svg'}

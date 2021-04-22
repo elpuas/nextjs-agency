@@ -1,5 +1,6 @@
 import Button from '@/components/atoms/Button'
 import PropTypes from 'prop-types'
+import {useEffect, useState} from 'react'
 
 /**
  * Button Block
@@ -24,12 +25,29 @@ export default function BlockButton({
   text,
   url
 }) {
+  const [newUrl, setNewUrl] = useState()
+
+  useEffect(() => {
+    /**
+     * Extract the Pathname from URL
+     *
+     * @param {string} url Link to Parse
+     */
+    function ParseURL() {
+      const parser = document.createElement('a')
+      parser.href = url
+      setNewUrl(parser.pathname)
+    }
+
+    ParseURL()
+  }, [])
+
   return (
     <Button
       className={className}
       text={text}
-      url={url}
-      urlExternal={true}
+      url={newUrl}
+      urlExternal={false}
       attributes={{
         id: anchor || null,
         target: linkTarget || null,
