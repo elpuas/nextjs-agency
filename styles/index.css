@@ -5,44 +5,6 @@
     @apply overflow-x-hidden text-black dark:text-white bg-yellow-50 dark:bg-zombie-dark;
 
     background-image: url('/images/pattern.png');
-
-    & .logoWrapper {
-      & > div:first-child {
-        @apply hidden;
-
-        display: none !important;
-      }
-
-      & > div:last-child {
-        @apply block;
-
-        display: block !important;
-      }
-    }
-  }
-
-  .dark {
-    & body {
-      & .logoWrapper {
-        & > div:last-child {
-          @apply hidden;
-
-          display: none !important;
-        }
-
-        & > div:first-child {
-          @apply block;
-
-          display: block !important;
-        }
-      }
-    }
-  }
-
-  @font-face {
-    font-family: 'Butcher';
-    src: url('/fonts/butcher.woff'), url('/fonts/butcher.woff2');
-    font-style: normal;
   }
 }
 
@@ -50,6 +12,8 @@ a,
 input,
 button {
   @apply focus:outline-black focus-within:outline-black;
+
+  font-family: 'Inter', sans-serif;
 
   &:focus-visible {
     @apply outline-black;
@@ -65,8 +29,26 @@ h3 {
   letter-spacing: -3px;
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .button-dark-mode {
+  @apply fixed bottom-8 right-8;
+
   width: 50px;
+  transform: translateY(0);
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Write you own custom classes here if necessary */
@@ -74,4 +56,4 @@ h3 {
 @import 'page.css';
 @import 'archive.css';
 @import 'header.css';
-@import 'towatch.css';
+@import 'projects.css';

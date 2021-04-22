@@ -1,9 +1,11 @@
 .navigation {
+  @apply ml-auto;
+
   & > ul {
     @apply flex flex-wrap justify-center;
 
     & > li {
-      @apply relative mx-8 mb-2;
+      @apply relative mx-8;
 
       & a {
         @apply block;
@@ -27,7 +29,7 @@
 
       @screen lg {
         &:last-child {
-          @apply mr-0 mb-0;
+          /* @apply mr-0 mb-0; */
         }
       }
     }

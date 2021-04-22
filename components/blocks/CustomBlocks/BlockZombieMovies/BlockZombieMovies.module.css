@@ -7,46 +7,47 @@
     @apply grid-cols-12;
   }
 
-  & > div {
-    @apply col-span-1 md:col-span-4 p-5;
+  & .zombieCard {
+    @apply col-span-1 md:col-span-4 bg-transparent w-full text-white dark:text-white;
 
-    &:nth-child(4),
-    &:nth-child(11) {
-      @apply md:col-span-full relative z-50 flex flex-col p-20 md:p-40  overflow-hidden;
+    height: 417px;
+    perspective: 1000px;
 
-      & figure {
-        @apply absolute top-0 left-0 w-full;
-
-        z-index: -1;
-
-        & img {
-          @apply w-full object-cover;
-
-          border-radius: 50px;
-          z-index: -1;
-        }
+    &:hover {
+      & .zombieCardInner {
+        transform: rotateY(180deg);
       }
+    }
 
-      & p {
-        @apply z-50 text-white;
+    & .zombieCardInner {
+      @apply relative w-full h-full text-center;
 
-        text-shadow: 0 0 4px black;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+
+      & img {
+        height: 417px !important;
       }
+    }
+
+    & .zombieCardFront,
+    & .zombieCardBack {
+      @apply absolute w-full h-full;
+
+      backface-visibility: hidden;
+    }
+
+    & .zombieCardBack {
+      @apply flex flex-col justify-center bg-green-400 p-4;
+
+      transform: rotateY(180deg);
     }
   }
 
   & .zombieTitle {
-    @apply z-50 -mt-7 text-center;
+    @apply text-center text-white dark:text-white;
 
     font-size: 2.5rem !important;
     line-height: 35px !important;
-  }
-
-  & figure {
-    & img {
-      @apply w-full object-cover;
-
-      min-height: 200px;
-    }
   }
 }

@@ -1,27 +1,82 @@
 .templateHeader {
   @apply mx-auto my-4;
 
-  & .search-button {
-    position: absolute;
-    left: -10px;
-    background: green;
-    border-radius: 100%;
-    padding: 10px;
-    top: 15px;
-    transform: rotate(349deg);
+  & .searchButton {
+    @apply font-bold lowercase;
 
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 0;
-      z-index: 1;
-      border-style: solid;
-      border-width: 0 20px 23px 0;
-      border-color: transparent green transparent transparent;
-      bottom: -18px;
-      left: 50%;
-      margin-left: -10px;
+    & span {
+      @apply pr-2;
+    }
+  }
+}
+
+.dark,
+.light {
+  & body {
+    & .templateHeader {
+      &.headerSticky {
+        @apply sticky;
+
+        background-color: #161c2d;
+
+        & .logoWrapper {
+          & > div:first-child {
+            @apply block;
+
+            display: block !important;
+          }
+
+          & > div:last-child {
+            @apply hidden;
+
+            display: none !important;
+          }
+        }
+
+        & .navigation {
+          & a {
+            @apply text-white dark:text-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  & .templateHeader:not(.headerSticky) {
+    & .logoWrapper {
+      & > div:first-child {
+        @apply hidden;
+
+        display: none !important;
+      }
+
+      & > div:last-child {
+        @apply block;
+
+        display: block !important;
+      }
+    }
+  }
+}
+
+.dark {
+  & body {
+    & .templateHeader:not(.headerSticky) {
+      & .logoWrapper {
+        & > div:first-child {
+          @apply block;
+
+          display: block !important;
+        }
+
+        & > div:last-child {
+          @apply hidden;
+
+          display: none !important;
+        }
+      }
     }
   }
 }

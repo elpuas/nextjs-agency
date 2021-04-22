@@ -3,6 +3,7 @@ import {useWordPressContext} from '@/components/common/WordPressProvider'
 import AlgoliaSearch from '@/components/molecules/AlgoliaSearch'
 import Navigation from '@/components/molecules/Navigation'
 import cn from 'classnames'
+import {useTheme} from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, {useEffect, useRef, useState} from 'react'
@@ -17,12 +18,17 @@ import styles from './Header.module.css'
  * @return {Element} The Header component.
  */
 export default function Header() {
+  const {theme, setTheme} = useTheme()
+
   const prevScrollY = useRef(0)
 
-  const [goingUp, setGoingUp] = useState(false)
+  const [goingUp, setGoingUp] = useState(true)
 
   useEffect(() => {
-    const handleScroll = () => {
+    /**
+     *
+     */
+    function handleScroll() {
       const currentScrollY = window.scrollY
       if (prevScrollY.current < currentScrollY && goingUp) {
         setGoingUp(false)
@@ -32,7 +38,6 @@ export default function Header() {
       }
 
       prevScrollY.current = currentScrollY
-      console.log(goingUp, currentScrollY)
     }
 
     window.addEventListener('scroll', handleScroll, {passive: true})
@@ -44,7 +49,10 @@ export default function Header() {
 
   const [searchClass, setSearchClass] = useState(false)
 
-  const onSearchClick = () => {
+  /**
+   *
+   */
+  function onSearchClick() {
     setSearchClass(!searchClass)
   }
 
@@ -57,7 +65,7 @@ export default function Header() {
         className={cn(
           styles.header,
           'templateHeader',
-          !goingUp ? styles.headerSticky : null
+          !goingUp ? 'headerSticky' : ''
         )}
       >
         <div
@@ -94,11 +102,26 @@ export default function Header() {
               styles={styles}
               className={styles.primaryMenu}
             />
-            <button className="search-button" onClick={onSearchClick}>
-              <span> 🧠 </span>Braiiins
+            <button className="searchButton" onClick={onSearchClick}>
+              <span role="img" aria-label="emoji">
+                {' '}
+                🧠{' '}
+              </span>
+              Braiiins
             </button>
           </div>
         </Container>
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className="button-dark-mode"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          <img
+            src={theme === 'dark' ? '/images/sun.svg' : '/images/moon.svg'}
+            alt={theme}
+          />
+        </button>
       </header>
     </>
   )

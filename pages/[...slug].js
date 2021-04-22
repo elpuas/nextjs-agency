@@ -5,7 +5,6 @@ import Blocks from '@/components/molecules/Blocks'
 import getPagePropTypes from '@/functions/getPagePropTypes'
 import getPostTypeStaticPaths from '@/lib/wordpress/_global/getPostTypeStaticPaths'
 import getPostTypeStaticProps from '@/lib/wordpress/_global/getPostTypeStaticProps'
-import {useTheme} from 'next-themes'
 
 // Define route post type.
 const postType = 'page'
@@ -19,7 +18,6 @@ const postType = 'page'
  * @return {Element}          The Page component.
  */
 export default function Page({post}) {
-  const {theme, setTheme} = useTheme()
   return (
     <Layout seo={{...post?.seo}}>
       <div
@@ -27,31 +25,7 @@ export default function Page({post}) {
           .toLowerCase()
           .replace(/\s/g, '')}`}
       >
-        <button
-          aria-label="Toggle Dark Mode"
-          type="button"
-          className="button-dark-mode"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        >
-          {theme === 'dark' ? (
-            <img src="/images/001-sun.svg" />
-          ) : (
-            <img src="/images/002-moon.svg" />
-          )}
-        </button>
         <Container>
-          {/* {'/' === post?.slug ? (
-            <Hero
-              subtitle="4x more bloodier guts"
-              className="homepage-hero"
-              title="2x More Gore"
-              body="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis."
-              backgroundImage={{
-                url: post?.featuredImage.node.sourceUrl
-              }}
-              cta={{icon: 'arrowRight', text: 'Take a look'}}
-            />
-          ) : null} */}
           <article className={`innerWrap`}>
             {'/' === post?.slug ? null : (
               <RichText tag="h1">{post?.title}</RichText>

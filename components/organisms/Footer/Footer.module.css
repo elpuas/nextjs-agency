@@ -1,5 +1,5 @@
 .footer {
-  @apply border-t;
+  background-color: #161c2d;
 
   & .footerMenu {
     & > ul {
@@ -19,6 +19,8 @@
   }
 
   & .copyright {
-    @apply text-center text-xs;
+    @apply text-center text-sm uppercase font-bold text-white dark:text-white;
+
+    font-family: 'Inter', sans-serif;
   }
 }
