@@ -30,8 +30,6 @@ export default function BlockButton({
   useEffect(() => {
     /**
      * Extract the Pathname from URL
-     *
-     * @param {string} url Link to Parse
      */
     function ParseURL() {
       const parser = document.createElement('a')
@@ -40,6 +38,7 @@ export default function BlockButton({
     }
 
     ParseURL()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

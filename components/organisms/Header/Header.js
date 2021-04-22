@@ -57,6 +57,9 @@ export default function Header() {
     setSearchClass(!searchClass)
   }
 
+  /**
+   *
+   */
   function switchTheme() {
     if (isMounted) {
       setTheme(theme === 'dark' ? 'light' : 'dark')

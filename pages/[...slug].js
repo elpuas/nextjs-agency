@@ -18,7 +18,6 @@ const postType = 'page'
  * @return {Element}          The Page component.
  */
 export default function Page({post}) {
-  console.log({post})
   return (
     <Layout seo={{...post?.seo}}>
       <div
