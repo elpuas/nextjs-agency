@@ -49,7 +49,7 @@ export default function BlogPost({post, archive, posts, pagination}) {
               <div className="posts">
                 {posts.map((post, index) => (
                   <Card
-                    image={post?.featuredImage.node}
+                    image={post?.featuredImage?.node}
                     key={index}
                     title={post?.title}
                     url={post?.uri}
@@ -74,12 +74,12 @@ export default function BlogPost({post, archive, posts, pagination}) {
     <Layout seo={{...post?.seo}} hasJsonLd={true}>
       <Container>
         <article className="innerWrap template-single">
+          <RichText tag="h1">{post?.title}</RichText>
           {!!post?.seo?.breadcrumbs && (
             <Breadcrumbs breadcrumbs={post.seo.breadcrumbs} />
           )}
-          <RichText tag="h1">{post?.title}</RichText>
           <Image
-            url={post?.featuredImage.node.sourceUrl}
+            url={post?.featuredImage?.node?.sourceUrl}
             alt={post?.slug}
             id={post?.databaseId}
           />

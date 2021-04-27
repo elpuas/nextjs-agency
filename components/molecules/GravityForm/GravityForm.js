@@ -1,25 +1,26 @@
+import Form from '@/components/molecules/Form'
+import getGfFormDefaults from '@/functions/gravityForms/getGfFormDefaults'
+import getGfFormValidationSchema from '@/functions/gravityForms/getGfFormValidationSchema'
+import cn from 'classnames'
 import PropTypes from 'prop-types'
 import React, {useState} from 'react'
-import Form from '@/components/molecules/Form'
 import Fields from './Fields'
-import getGfFormValidationSchema from '@/functions/gravityForms/getGfFormValidationSchema'
-import getGfFormDefaults from '@/functions/gravityForms/getGfFormDefaults'
 import styles from './GravityForm.module.css'
-import cn from 'classnames'
 
 /**
  * Render the GravityForm component.
  *
- * @param {object} props                   The GravityForm block attributes as props.
- * @param {object} props.formData          GravityForm form data.
- * @param {string} props.formData.cssClass GravityForm form classname.
- * @param {object} props.formData.fields   GravityForm form fields.
- * @param {number} props.formData.formId   GravityForm form id.
- * @param {string} props.formData.title    GravityForm form title.
- * @return {Element}                       The GravityForm component.
+ * @param {object} props                      The GravityForm block attributes as props.
+ * @param {object} props.formData             GravityForm form data.
+ * @param {string} props.formData.cssClass    GravityForm form classname.
+ * @param {object} props.formData.fields      GravityForm form fields.
+ * @param {number} props.formData.formId      GravityForm form id.
+ * @param {string} props.formData.title       GravityForm form title.
+ * @param {string} props.formData.description GravityForm form description.
+ * @return {Element}                          The GravityForm component.
  */
 export default function GravityForm({
-  formData: {cssClass, fields, formId, title}
+  formData: {cssClass, fields, formId, title, description}
 }) {
   // Setup form defaults and validation based on GravityForm field data.
   const fieldData = fields?.edges
@@ -85,6 +86,7 @@ export default function GravityForm({
       {(formikProps) => (
         <>
           {title && <h2 className={styles.title}>{title}</h2>}
+          {description && <p>{description}</p>}
           {fieldData && <Fields fields={fieldData} formikProps={formikProps} />}
           {!!formFeedback && (
             <div
@@ -103,6 +105,7 @@ GravityForm.propTypes = {
     cssClass: PropTypes.string,
     fields: PropTypes.object,
     formId: PropTypes.number,
-    title: PropTypes.string
+    title: PropTypes.string,
+    description: PropTypes.string
   })
 }
