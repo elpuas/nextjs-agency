@@ -48,4 +48,41 @@
       }
     }
   }
+
+  & .template-single {
+    & img {
+      @apply w-full object-cover;
+    }
+
+    & h1 {
+      @apply text-8xl mb-24 text-center;
+    }
+
+    & section {
+      & p,
+      & h2 {
+        @apply font-bold text-5xl text-center;
+      }
+    }
+
+    & .comment-form {
+      background-color: #161c2d;
+
+      & label {
+        @apply font-light;
+
+        &::after {
+          @apply text-gray-300;
+        }
+      }
+
+      & input {
+        @apply rounded-none w-full border-gray-50 border-0 border-b bg-transparent outline-none;
+      }
+    }
+
+    & .comments-heading {
+      @apply my-14 text-center text-6xl;
+    }
+  }
 }

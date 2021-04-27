@@ -127,7 +127,7 @@ export default function Comments({comments, postId}) {
 
   return (
     <>
-      <h3>Comments</h3>
+      <h3 className="comments-heading">Comments</h3>
       {
         // If there are comments, loop over and display.
         !!comments?.length &&

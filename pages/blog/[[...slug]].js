@@ -1,6 +1,7 @@
 import Breadcrumbs from '@/components/atoms/Breadcrumbs'
 import Button from '@/components/atoms/Button'
 import Container from '@/components/atoms/Container'
+import Image from '@/components/atoms/Image'
 import RichText from '@/components/atoms/RichText'
 import Layout from '@/components/common/Layout'
 import Blocks from '@/components/molecules/Blocks'
@@ -72,11 +73,16 @@ export default function BlogPost({post, archive, posts, pagination}) {
   return (
     <Layout seo={{...post?.seo}} hasJsonLd={true}>
       <Container>
-        <article className="innerWrap">
+        <article className="innerWrap template-single">
           {!!post?.seo?.breadcrumbs && (
             <Breadcrumbs breadcrumbs={post.seo.breadcrumbs} />
           )}
           <RichText tag="h1">{post?.title}</RichText>
+          <Image
+            url={post?.featuredImage.node.sourceUrl}
+            alt={post?.slug}
+            id={post?.databaseId}
+          />
           <Blocks blocks={post?.blocks} />
           <Comments comments={post?.comments?.edges} postId={post.databaseId} />
         </article>
