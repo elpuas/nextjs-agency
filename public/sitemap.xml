@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://nextjs-wordpress-starter.vercel.app</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.086Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/login</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/profile</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/register</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/search</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/projects</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/contact</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/about</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/404-2</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/sample-page</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/blog/core-horribilem-walking</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/blog/in-craven-omni-memoria</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
-<url><loc>https://nextjs-wordpress-starter.vercel.app/blog/zombie-sicut-de-grave</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:07:26.087Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.478Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/login</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/profile</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/register</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/search</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/projects</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/contact</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/about</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/404-2</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/sample-page</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/blog/core-horribilem-walking</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/blog/in-craven-omni-memoria</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
+<url><loc>https://nextjs-wordpress-starter.vercel.app/blog/zombie-sicut-de-grave</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-04-27T16:44:31.481Z</lastmod></url>
 </urlset>
